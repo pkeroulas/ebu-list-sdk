@@ -1,4 +1,4 @@
-import { login } from './auth';
+import { login, logout } from './auth';
 import { get } from './common';
 import { logger } from './logger';
 
@@ -15,6 +15,7 @@ class LIST {
 
     public shutdown() {
         logger.info('Shutting down');
+        return logout(this.baseUrl, this.token);
     }
 
     public async getPcapInfo(pcapId: string) {
