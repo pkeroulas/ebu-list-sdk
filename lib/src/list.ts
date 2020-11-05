@@ -25,6 +25,14 @@ class LIST {
         return logout(this.baseUrl, this.token);
     }
 
+    public async getAllLiveSources() {
+        return this.get('/live/sources');
+    }
+
+    public async getAllPcaps() {
+        return this.get(`/pcap`);
+    }
+
     public async getPcapInfo(pcapId: string) {
         return this.get(`/pcap/${pcapId}`);
     }
